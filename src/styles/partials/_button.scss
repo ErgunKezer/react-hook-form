@@ -1,0 +1,18 @@
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    &.submit {
+        background-color: $green-3;
+        color: $white-1;
+        border-radius: 4px;
+    }
+}
+input {
+    &[type='button'] {
+        @extend button;
+    }
+    &[type='submit'] {
+        @extend button;
+    }
+}

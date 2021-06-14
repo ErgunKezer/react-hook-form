@@ -1,0 +1,17 @@
+.modal {
+    &-error {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 16px;
+        .closeModal {
+            align-self: flex-end;
+            cursor: pointer;
+        }
+        h2 {
+            font-size: 32px;
+            color: black;
+            margin: 8px auto 16px;
+        }
+    }
+}
