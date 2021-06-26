@@ -2,20 +2,32 @@ form {
     display: flex;
     flex-direction: column;
     margin: 16px 0;
+    width: 250px;
     & > * {
         margin-bottom: 10px;
     }
     input {
         width: 100%;
         padding: 4px 8px;
+        font-size: 16px;
+        border-radius: 4px;
+        border: 1px solid #7b7b7b;
         &[type='submit'] {
             width: 100px;
             align-self: center;
+        }
+        &[type='checkbox'] {
+            width: 16px;
+            height: 16px;
+            filter: hue-rotate(240deg);
         }
         &.error {
             border: 2px solid red;
             border-radius: 4px;
         }
+    }
+    label.error {
+        color: red;
     }
     select {
         padding: 4px 8px;
