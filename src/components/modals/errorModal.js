@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { closeModal } from '../../redux/actions';
 
 const ErrorModal = ({ open, message, closeModal }) => {
-    // console.log(open, message);
     const style = {
         content: {
             top: '50%',
@@ -20,6 +19,18 @@ const ErrorModal = ({ open, message, closeModal }) => {
             backgroundColor: 'rgba(0, 0, 0, 0.3)',
         },
     };
+    let content = '';
+    if (typeof message === 'string') {
+        content = <p>{message}</p>;
+    } else {
+        content = (
+            <ol>
+                {message.map((o, idx) => (
+                    <li key={idx}>{o}</li>
+                ))}
+            </ol>
+        );
+    }
 
     return (
         <Modal
@@ -35,7 +46,7 @@ const ErrorModal = ({ open, message, closeModal }) => {
                     x
                 </span>
                 <h2>Error</h2>
-                <p>{message}</p>
+                {content}
             </div>
         </Modal>
     );

@@ -6,11 +6,11 @@ const closeModal = () => (dispatch) => {
     });
 };
 
-const openModal = (errMessage) => (dispatch) => {
+const openModal = (err) => (dispatch) => {
     dispatch({
         type: OPEN_MODAL,
         payload: {
-            errorMessage: errMessage,
+            errorMessage: err,
         },
     });
 };

@@ -13,8 +13,8 @@ const SignUp = (props) => {
 
     const onSubmit = (data) => console.log(data);
     const onInvalid = (err) => {
-        console.error(err);
-        props.openModal('Please enter the required fields');
+        const formErrors = Object.values(err).map((o) => o.message);
+        props.openModal(formErrors);
     };
     return (
         <div className='sign-up'>
@@ -46,7 +46,7 @@ const SignUp = (props) => {
                     <input
                         type='checkbox'
                         id='agreement'
-                        {...register('agreement', validator.required)}
+                        {...register('agreement', validator.agreement)}
                     ></input>
                     <label htmlFor='agreement' className={errors?.agreement && 'error'}>
                         Accept agreement!!!

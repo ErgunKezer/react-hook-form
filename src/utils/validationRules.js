@@ -36,7 +36,7 @@ const userName = {
 const agreement = {
     required: {
         value: true,
-        message: 'Agreement field is required. Please check the agreement',
+        message: 'Agreement field is required',
     },
 };
 const password = {
